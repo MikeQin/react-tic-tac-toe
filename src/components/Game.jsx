@@ -12,7 +12,7 @@ class Game extends Component {
     };
   }
 
-  handleClick = i => {
+  handleClick(i) {
     const history = this.state.history.slice(0, this.state.stepNumber + 1);
     const current = history[history.length - 1];
     const squares = current.squares.slice();
@@ -29,7 +29,7 @@ class Game extends Component {
       xIsNext: !prevState.xIsNext,
       stepNumber: history.length
     }));
-  };
+  }
 
   jumpTo(step) {
     this.setState({
@@ -75,7 +75,7 @@ class Game extends Component {
         </div>
         <div className="game-info">
           <div>
-            <button onClick={() => this.reset()}>Reset the game</button>
+            <button onClick={this.reset}>Reset the game</button>
           </div>
           <div>{status}</div>
           <ol>{moves}</ol>
